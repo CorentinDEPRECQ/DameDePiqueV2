@@ -34,6 +34,8 @@ public class Joueur {
 
     public static final int TAILLE_NOM_MIN = 4;
 
+    public static final int TAILLE_MAIN = 13;
+
     /**
      * contient la position du joueur dans la partie qui va de 0 a 3
      */
@@ -255,6 +257,20 @@ public class Joueur {
         }
 
         return cartePossible;
+    }
+
+    public boolean rechercherCarte (Carte carteARecherche) {
+
+        boolean estPresent;
+
+        estPresent = false;
+
+        for(int i = 0 ; i < TAILLE_MAIN ; i++ ) {
+            if(carteARecherche.getNumCarte() == mainDuJoueur[i].getNumCarte()) {
+                estPresent = true;
+            }
+        }
+        return estPresent;
     }
 
     /**
